@@ -1,0 +1,90 @@
+
+
+version: 2
+
+models:
+    - name: location
+      description: "dbt model which gives location information"
+      columns:
+          - name: Continent
+          - name: Country         
+          - name: Province         
+          - name: Location_level
+          - name: Location
+          - name: Location_ISO_Code
+          - name: Island
+          - name: Latitude
+          - name: Longitde
+
+    - name: new_covid_data
+      description: "dbt model which gives new covid case counts information"
+      columns:
+          - name: date
+          - name: location         
+          - name: new_cases         
+          - name: new_deaths
+          - name: new_recovered
+          - name: new_active_cases
+          - name: New_Cases_per_Million
+          - name: New_Deaths_per_Million
+
+    - name: total_covid_data
+      description: "dbt model which gives total covid case counts information"
+      columns:
+          - name: date
+          - name: location         
+          - name: total_cases         
+          - name: total_deaths
+          - name: total_recovered
+          - name: total_active_cases
+          - name: total_Cases_per_Million
+          - name: total_Deaths_per_Million
+
+    - name: geographical_covid_rate
+      description: "dbt model which gives geographical covid rate information"
+      columns:
+          - name: date
+          - name: location         
+          - name: province         
+          - name: latitude
+          - name: longitude
+          - name: Case_Fatality_Rate
+          - name: Case_Recovered_Rate
+          - name: Growth_Factor_of_New_Cases
+          - name: Growth_Factor_of_New_Deaths
+
+    - name: region_census
+      description: "dbt model which gives regional census information"
+      columns:
+          - name: Location_ISO_Code
+          - name: location         
+          - name: Total_Regencies         
+          - name: Total_Cities
+          - name: Total_Districts
+          - name: Total_Urban_Villages
+          - name: Total_Rural_Villages
+          - name: Area_km_2_
+          - name: Population
+          - name: Population_Density
+          - name: Longitude
+          - name: Latitude
+
+    - name: agg_view_indonesia
+      description: "dbt model which gives an aggregated covid information for indonesia"
+      columns:
+          - name: Country
+          - name: Location
+          - name: Location_ISO_Code
+          - name: Total_Districts
+          - name: population
+          - name: Date
+          - name: new_cases
+          - name: new_deaths
+          - name: new_recovered
+          - name: total_cases
+          - name: total_deaths
+          - name: total_recovered
+          - name: Case_Fatality_Rate
+          - name: Case_Recovered_Rate
+          - name: Growth_Factor_of_New_Cases
+          - name: Growth_Factor_of_New_Deaths
